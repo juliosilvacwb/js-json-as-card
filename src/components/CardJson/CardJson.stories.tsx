@@ -16,7 +16,22 @@ export default meta;
 type Story = StoryObj<typeof CardJson>;
 
 export const Main: Story = (args) => {
-  return <CardJson {...args} />
+  return  <CardJson {...args} 
+            styleCard={{
+              backgroundColor: "#E1F5FE", 
+              fontFamily: "Arial, sans-serif",
+              borderRadius: 0,
+              boxShadow: 'none'
+            }} 
+            styleLabel={{
+              width: '50px',
+              border: '1px'
+            }}
+            styleText={{
+              marginLeft: '1rem'
+            }}
+            format={true}
+          />
 }
 
 Main.args = {

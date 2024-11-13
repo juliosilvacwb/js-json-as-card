@@ -15,17 +15,31 @@ const CardContainer = styled.div`
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 16px;
+  font-family: Arial, sans-serif;
+`;
+
+const CardLabel = styled.div`
+`;
+
+const CardText = styled.div`
+  margin-left: 0.5rem;
 `;
 
 const CardJson: FC<CardJsonProps> = ({ ...props }) => {
 
-    const { json, id, ...rest } = props;
+    const { json, id, format, styleCard, styleLabel, styleText, ...rest } = props;
 
     return (
-        <CardContainer data-testid="cardId" id={id} {...rest} >
+        <CardContainer data-testid="cardId" id={id} {...rest} style={{...styleCard}} >
             {Object.keys(json).map((key) => (
-                <div key={key}>
-                    <strong>{formatPropertyName(key)}</strong>: {json[key]}
+                <div key={key} style={{display: 'flex'}}>
+                    <CardLabel style={{...styleLabel}}>
+                    <strong>
+                            {
+                                !!format ? formatPropertyName(key) : key
+                            }
+                    </strong>:
+                    </CardLabel><CardText style={{...styleText}}>{json[key]}</CardText>
                 </div>
             ))}
         </CardContainer>
