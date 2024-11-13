@@ -6,8 +6,8 @@ Show JSON as Card Component
 ```js
 
     const user = {
-            email: 'julio@email.com',
             name: 'Julio Silva',
+            email: 'julio@email.com',
             phone: '+55 11 99999-9999'
         }
 
@@ -19,8 +19,8 @@ Show JSON as Card Component
 ```js
 
     const user = {
-            email: 'julio@email.com',
             name: 'Julio Silva',
+            email: 'julio@email.com',
             phone: '+55 11 99999-9999'
         }
 
@@ -44,3 +44,17 @@ Show JSON as Card Component
 ```
 
 ![Example](./public/styled.png)
+
+
+```js
+
+    const user = {
+            "Name": 'Julio Silva',
+            "E-mail": 'julio@email.com',
+            "Phone": '+55 11 99999-9999'
+        }
+
+    <CardJson json={user}/>
+```
+
+![Example](./public/customJson.png)
