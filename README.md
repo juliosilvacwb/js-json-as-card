@@ -1,7 +1,17 @@
 # js-json-as-card
 Show JSON as Card Component
 
-### How to use
+| Field              | Type         | Required | Default        | Description                                                                          |
+| ------------------ | ------------ | -------- | -------------- | ------------------------------------------------------------------------------------ |
+| id                 | string       | no       | undefined      | Id of the HTML component.                                                            |
+| json               | object       | yes      | N/A            | JSON for presentation.                                                               |
+| format             | boolean      | no       | false          | Format label like `name` => `Name` or `primary_email` => `Primary email`.            |
+| styleCard          | object       | no       | N/A            | Object style for the card.                                                           |
+| styleLabel         | object       | no       | N/A            | Object style for the labels.                                                         |
+| styleText          | object       | no       | N/A            | Object style for the text.                                                           |
+
+
+### Example
 
 ```js
 
