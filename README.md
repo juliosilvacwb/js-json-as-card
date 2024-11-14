@@ -32,6 +32,7 @@ const CardText = styled.div`
 ### Example
 
 ```js
+    import { CardJson } from 'js-json-as-card';
 
     const user = {
             name: 'Julio Silva',
@@ -45,6 +46,7 @@ const CardText = styled.div`
 ![Example](./public/default.png)
 
 ```js
+    import { CardJson } from 'js-json-as-card';
 
     const user = {
             name: 'Julio Silva',
@@ -82,6 +84,7 @@ const CardText = styled.div`
 
 
 ```js
+    import { CardJson } from 'js-json-as-card';
 
     const user = {
             "Name": 'Julio Silva',
