@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import CardJson from "./CardJson";
+import { styled } from "styled-components";
 
 const meta: Meta<typeof CardJson> = {
   component: CardJson,
@@ -14,6 +15,21 @@ const meta: Meta<typeof CardJson> = {
 export default meta;
 
 type Story = StoryObj<typeof CardJson>;
+
+const Button = styled.button`
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+  border: none;
+  color: #FFF;
+  background-color: #2196F3;
+  margin: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  &:hover {
+    background-color: #1976D2; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+`;
 
 export const Main: Story = (args) => {
   return  <CardJson {...args} 
@@ -31,6 +47,13 @@ export const Main: Story = (args) => {
               marginLeft: '1rem'
             }}
             format={true}
+            complementComponent={
+              <div style={{ padding: '10px 0'}}>
+                <Button onClick={() => alert('Click') }>
+                    Open
+                  </Button>
+              </div>
+            }
           />
 }
 

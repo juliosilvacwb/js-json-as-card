@@ -1,15 +1,29 @@
 # js-json-as-card
-Show JSON as Card Component
+A React component for presenting JSON data within a styled card.
 
-| Field              | Type         | Required | Default        | Description                                                                          |
-| ------------------ | ------------ | -------- | -------------- | ------------------------------------------------------------------------------------ |
-| id                 | string       | no       | undefined      | Id of the HTML component.                                                            |
-| json               | object       | yes      | N/A            | JSON for presentation.                                                               |
-| format             | boolean      | no       | false          | Format label like `name` => `Name` or `primary_email` => `Primary email`.            |
-| styleCard          | object       | no       | N/A            | Object style for the card.                                                           |
-| styleLabel         | object       | no       | N/A            | Object style for the labels.                                                         |
-| styleText          | object       | no       | N/A            | Object style for the text.                                                           |
+| Field               | Type                | Required | Default        | Description                                                                   |
+| ------------------- | ------------------- | -------- | -------------- | ----------------------------------------------------------------------------- |
+| id                  | string              | no       | undefined      | Id of the HTML.                                                               |
+| json                | object              | yes      | N/A            | JSON for presentation.                                                        |
+| format              | boolean             | no       | false          | Format label like `name` => `Name` or `primary_email` => `Primary email`.     |
+| styleCard           | React.CSSProperties | no       | CardContainer  | Object style for the card.                                                    |
+| styleLabel          | React.CSSProperties | no       | N/A            | Object style for the labels.                                                  |
+| styleText           | React.CSSProperties | no       | CardText       | Object style for the text.                                                    |
+| complementComponent | React.ReactNode     | no       | N/A            | Object style for the text.                                                    |
 
+const CardContainer = styled.div`
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 16px;
+  font-family: Arial, sans-serif;
+`;
+
+const CardText = styled.div`
+  margin-left: 0.5rem;
+`;
 
 ### Example
 
@@ -50,6 +64,13 @@ Show JSON as Card Component
             marginLeft: '1rem'
         }}
         format={true}
+        complementComponent={
+            <div style={{ padding: '10px 0'}}>
+            <Button onClick={() => alert('Click') }>
+                Open
+                </Button>
+            </div>
+        }
     />
 ```
 

@@ -10,9 +10,10 @@ const formatPropertyName = (propertyName: string) => {
 };
 
 const CardContainer = styled.div`
+  position: relative;
   background-color: #f0f0f0;
   border-radius: 10px;
-  padding: 16px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 16px;
   font-family: Arial, sans-serif;
@@ -27,21 +28,26 @@ const CardText = styled.div`
 
 const CardJson: FC<CardJsonProps> = ({ ...props }) => {
 
-    const { json, id, format, styleCard, styleLabel, styleText, ...rest } = props;
+    const { json, id, format, styleCard, styleLabel, styleText, complementComponent, ...rest } = props;
 
     return (
         <CardContainer data-testid="cardId" id={id} {...rest} style={{...styleCard}} >
-            {Object.keys(json).map((key) => (
-                <div key={key} style={{display: 'flex'}}>
-                    <CardLabel style={{...styleLabel}}>
-                    <strong>
-                            {
-                                !!format ? formatPropertyName(key) : key
-                            }
-                    </strong>:
-                    </CardLabel><CardText style={{...styleText}}>{json[key]}</CardText>
-                </div>
-            ))}
+            {
+                Object.keys(json).map((key) => (
+                    <div key={key} style={{display: 'flex'}}>
+                        <CardLabel style={{...styleLabel}}>
+                        <strong>
+                                {
+                                    !!format ? formatPropertyName(key) : key
+                                }
+                        </strong>:
+                        </CardLabel><CardText style={{...styleText}}>{json[key]}</CardText>
+                    </div>
+                ))
+            }
+            {
+                complementComponent
+            }
         </CardContainer>
     );
 };

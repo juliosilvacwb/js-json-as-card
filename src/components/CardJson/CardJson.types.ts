@@ -3,7 +3,8 @@ export interface CardJsonProps {
   id?: string;
   json: any;
   format?: boolean;
-  styleCard?: any;
-  styleLabel?: any;
-  styleText?: any;
+  styleCard?: React.CSSProperties;
+  styleLabel?: React.CSSProperties;
+  styleText?: React.CSSProperties;
+  complementComponent?: React.ReactNode;
 }
