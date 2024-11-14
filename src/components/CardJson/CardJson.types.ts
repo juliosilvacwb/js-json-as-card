@@ -7,4 +7,5 @@ export interface CardJsonProps {
   styleLabel?: React.CSSProperties;
   styleText?: React.CSSProperties;
   complementComponent?: React.ReactNode;
+  exclude?: string[]
 }

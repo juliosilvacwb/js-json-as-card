@@ -28,22 +28,25 @@ const CardText = styled.div`
 
 const CardJson: FC<CardJsonProps> = ({ ...props }) => {
 
-    const { json, id, format, styleCard, styleLabel, styleText, complementComponent, ...rest } = props;
+    const { json, id, format, styleCard, styleLabel, styleText, complementComponent, exclude, ...rest } = props;
 
     return (
         <CardContainer data-testid="cardId" id={id} {...rest} style={{...styleCard}} >
             {
-                Object.keys(json).map((key) => (
-                    <div key={key} style={{display: 'flex'}}>
-                        <CardLabel style={{...styleLabel}}>
-                        <strong>
-                                {
-                                    !!format ? formatPropertyName(key) : key
-                                }
-                        </strong>:
-                        </CardLabel><CardText style={{...styleText}}>{json[key]}</CardText>
-                    </div>
-                ))
+                Object.keys(json).map((key) => {
+
+                    if (exclude?.includes(key)) return;
+                    
+                    return  <div key={key} style={{display: 'flex'}}>
+                                <CardLabel style={{...styleLabel}}>
+                                <strong>
+                                        {
+                                            !!format ? formatPropertyName(key) : key
+                                        }
+                                </strong>:
+                                </CardLabel><CardText style={{...styleText}}>{json[key]}</CardText>
+                            </div>
+                    })
             }
             {
                 complementComponent
