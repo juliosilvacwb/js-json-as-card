@@ -11,6 +11,7 @@ A React component for presenting JSON data within a styled card.
 | styleText           | React.CSSProperties | no       | CardText       | Object style for the text.                                                    |
 | complementComponent | React.ReactNode     | no       | N/A            | Object style for the text.                                                    |
 
+```js
 const CardContainer = styled.div`
   position: relative;
   background-color: #f0f0f0;
@@ -20,10 +21,13 @@ const CardContainer = styled.div`
   margin: 16px;
   font-family: Arial, sans-serif;
 `;
+```
 
+```js
 const CardText = styled.div`
   margin-left: 0.5rem;
 `;
+```
 
 ### Example
 
