@@ -1,2 +1,2 @@
 export { default } from './CardJson';
-export { CardJsonProps } from './CardJson.types';
+export type { CardJsonProps } from './CardJson.types';
