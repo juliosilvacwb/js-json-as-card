@@ -3,13 +3,15 @@ A React component for presenting JSON data within a styled card.
 
 | Field               | Type                | Required | Default        | Description                                                                   |
 | ------------------- | ------------------- | -------- | -------------- | ----------------------------------------------------------------------------- |
-| id                  | string              | no       | undefined      | Id of the HTML.                                                               |
+| id                  | string              | no       | undefined      | Id of the HTML component.                                                     |
 | json                | object              | yes      | N/A            | JSON for presentation.                                                        |
 | format              | boolean             | no       | false          | Format label like `name` => `Name` or `primary_email` => `Primary email`.     |
-| styleCard           | React.CSSProperties | no       | CardContainer  | Object style for the card.                                                    |
+| styleCard           | React.CSSProperties | no       | CardContainer  | Object style for the card container.                                          |
 | styleLabel          | React.CSSProperties | no       | N/A            | Object style for the labels.                                                  |
-| styleText           | React.CSSProperties | no       | CardText       | Object style for the text.                                                    |
-| complementComponent | React.ReactNode     | no       | N/A            | Object style for the text.                                                    |
+| styleText           | React.CSSProperties | no       | CardText       | Object style for the text content.                                            |
+| complementComponent | React.ReactNode     | no       | N/A            | Additional React component to be rendered alongside the main content.         |
+| exclude             | array of strings    | no       | N/A            | List of JSON fields to ignore when rendering or processing.                   |
+
 
 ```js
 const CardContainer = styled.div`
