@@ -9,7 +9,7 @@ A React component for presenting JSON data within a styled card.
 | styleCard           | React.CSSProperties | no       | CardContainer  | Object style for the card.                                                    |
 | styleLabel          | React.CSSProperties | no       | N/A            | Object style for the labels.                                                  |
 | styleText           | React.CSSProperties | no       | CardText       | Object style for the text.                                                    |
-| complementComponent | Element             | no       | N/A            | Object style for the text.                                                    |
+| complementComponent | React.ReactNode     | no       | N/A            | Object style for the text.                                                    |
 
 ```js
 const CardContainer = styled.div`
